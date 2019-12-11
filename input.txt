@@ -1,0 +1,9 @@
+#Hi this program will download comics from http://explosm.net/comics/archive automatically 
+#Just type what u want in the given format
+#
+#
+#latest 10
+random
+#march 2017
+#december 2017
+#Matt Melvin ,Kris Wilson
