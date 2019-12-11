@@ -8,14 +8,14 @@ import sys
 
 arr=['January','February','March','April','May','June','July','August','September','October','November','December']
 
-def createFile(file_name,r):    #Creates a file
+def createFile(file_name,r):    #Saves a file after downloading from web
 	print("Downloading:- "+file_name)
 	with open(file_name, 'wb') as x:
 		for chunk in r.iter_content(chunk_size=2048*2048):
 			if chunk:
 				x.write(chunk)
 
-def getComicList(year,month,authors,max_files):
+def getComicList(year,month,authors,max_files):  # this function download files of particular month and year till file limit is reached 
 
 	URL="http://explosm.net/comics/archive/"+(str)(year)+"/"+(str)(month)
 
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 	start_year=2005
 	end_year=todayYear
 
-	try:
+	try:   # reads data from input.txt
 		file=open("input.txt","r")
 		res=(file.read())
 		res=res.split("\n")
@@ -157,7 +157,7 @@ if __name__ == "__main__":
 	lis=[]
 
 
-	for i in range(y,x-1,-1):
+	for i in range(y,x-1,-1):   # loops to scrape comics throughout the range 
 		year=(int)((i+24000-1)/12)
 		month=(int)((i-1)%12+1)
 		year_path=os.path.join(cwd,(str)(year))
